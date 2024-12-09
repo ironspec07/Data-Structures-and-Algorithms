@@ -15,6 +15,9 @@ public class sorting {
             s++;
             e--;
         }
+        for (int i : arr) {
+            System.out.print(i+" ");
+        }
         sc.close();
     }
 }

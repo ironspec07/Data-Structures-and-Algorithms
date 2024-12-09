@@ -1,18 +1,14 @@
 import java.util.*;
-public class PrefixSum {
-    public static void prefixSum(int[] arr , int n){
+public class PrefixSumOp {
+    public static int[] prefix(int[] arr){
+        int n = arr.length;
         int[] pf = new int[n];
-        int sum = 0;
-        for (int i = 0; i < n; i++) {
-            sum = sum + arr[i];
-            pf[i] = sum;
+        pf[0] = arr[0];
+        for (int i = 1; i < n; i++) {
+            pf[i] = pf[i-1]+arr[i];
         }
-        
-        for (int i : pf) {
-            System.out.print(i+" ");
-        }
+        return pf;
     }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -20,8 +16,10 @@ public class PrefixSum {
         for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
-        prefixSum(arr,n);
-        
+        int[] pf = prefix(arr);
+        for (int i : pf) {
+            System.out.println(i);
+        }
         sc.close();
     }
 }

@@ -1,13 +1,18 @@
 import java.util.*;
 public class PrimeFunction {
-    public static void prime(int n){
+    public static void prime(long n){
         int count = 0;
-        for (int i = 1; i <= n; i++) {
-            if (n%i==0) {
-                count++;
+        for(int i = 1; i*i<= n;i++){
+            if(n%i==0){
+                if(i==n/i){
+                    count++;
+                }
+                else{
+                    count = count + 2;
+                }
             }
         }
-        if (count==2) {
+        if(count==2){
             System.out.println("YES");
         }
         else{
@@ -18,7 +23,7 @@ public class PrimeFunction {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
         for (int i = 1; i <= t; i++) {
-            int n = sc.nextInt();
+            long n = sc.nextLong();
             prime(n);
         }
         sc.close();

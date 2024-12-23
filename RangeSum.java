@@ -1,17 +1,28 @@
-import java.util.*;
+import java.util.Scanner;
+
 public class RangeSum {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        for (int i = 1; i <= t; i++) {
-            long l = sc.nextLong();
-            long r = sc.nextLong();
-            long sum = 0;
-            for (long j = l; j <=r; j++) {
-                sum += j;
-            }
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of test cases
+        int T = scanner.nextInt();
+
+        // Process each test case
+        for (int i = 0; i < T; i++) {
+            long L = scanner.nextLong();
+            long R = scanner.nextLong();
+
+            // Calculate the sum in range [L, R] using the formula
+            long sum = sumUpTo(R) - sumUpTo(L - 1);
             System.out.println(sum);
         }
-        sc.close();
+
+        scanner.close();
+    }
+
+    // Method to calculate the sum of first n natural numbers
+    private static long sumUpTo(long n) {
+        if (n <= 0) return 0;
+        return n * (n + 1) / 2;
     }
 }

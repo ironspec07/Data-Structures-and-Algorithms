@@ -16,10 +16,11 @@ public class SumOfRange {
                 sumOdd += i;
             }
         }
-        int sum = 
+        int sum = 1;
+        System.out.println(sum+sumEven+sumOdd);
         // System.out.println(sumEven+sumOdd);
         // System.out.println(sumEven);
         // System.out.println(sumOdd);
-        // sc.close();
+        sc.close();
     }
 }

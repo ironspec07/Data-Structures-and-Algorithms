@@ -6,7 +6,7 @@ public class Gcd {
         int a = sc.nextInt();
         int b = sc.nextInt();
         int n = Math.max(a, b);
-        int max = 0;
+        int max = Integer.MIN_VALUE;
         for (int i = 1; i <= n; i++) {
             if (a%i==0 && b%i==0) {
                 if (i>= max) {
@@ -14,7 +14,9 @@ public class Gcd {
                 }
             }
         }
-        System.out.println(max);
+        long gcd = (a*b)/max;
+        System.out.println(max +" "+gcd);
+
         sc.close();
     }
 }

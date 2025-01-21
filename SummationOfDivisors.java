@@ -1,20 +1,21 @@
-import java.util.Scanner;
+    import java.util.Scanner;
 
-public class SummationOfDivisors {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        long n = sc.nextLong();
-        long sum = 0;
-        long sqrtN = (long) Math.sqrt(n);
+    public class SummationOfDivisors {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            long n = sc.nextLong();
+            long sum = 0;
 
-        for (long i = 1; i <= sqrtN; i++) {
-            sum += i;
-            if (i != n / i) {
-                sum += n / i;
+        for(int i=1;i<=Math.sqrt(n);i++){
+            if(n % i == 0){
+                sum += i;
+                if(i != Math.sqrt(n)){
+                    sum+=n/i;
+                }
             }
         }
 
-        System.out.println(sum);
-        sc.close();
+            System.out.println(sum);
+            sc.close();
+        }
     }
-}

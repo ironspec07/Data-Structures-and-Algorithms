@@ -12,7 +12,7 @@ public class SuffixSum {
         for (int i = n-m; i < n; i++) {
             sum = sum + arr[i];
         }
-        System.out.println(sum);
+        System.out.print(sum);
         sc.close();
     }
 }

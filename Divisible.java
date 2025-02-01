@@ -5,7 +5,7 @@ public class Divisible {
         Scanner sc = new Scanner(System.in);
         String n = sc.next();
         int x = sc.nextInt();
-        int remainder = 0;
+        long remainder = 0;
         for (int i = 0; i < n.length(); i++) {
             remainder = (remainder * 10 + (n.charAt(i) - '0')) % x;
         }

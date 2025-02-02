@@ -8,7 +8,6 @@ public class BearAndBigBrother {
         while (a <= b) {
             a = a*3;
             b = b*2;
-            System.out.println(a+" "+b);
             count++;
         }
         System.out.println(count);

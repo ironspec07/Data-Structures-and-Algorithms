@@ -7,7 +7,7 @@ public class WayTooLongWords {
         for(int i = 0;i<t;i++) {
             String str = sc.nextLine();
             int l = str.length();
-            if (l<10) {
+            if (l <= 10) {
                 System.out.println(str);
             }
             else{

@@ -1,3 +1,4 @@
+//Leetcode-1001
 import java.util.*;
 public class GridIllumination {
     private static int[] gridIlluminationCheck(int n, int[][] lamps, int[][] queries){

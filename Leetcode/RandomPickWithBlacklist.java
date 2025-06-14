@@ -10,6 +10,7 @@ public class RandomPickWithBlacklist {
         for (int i = 0; i < blacklist.length; i++) {
             hm.put(blacklist[i], -1);
         }
+        valid = n-blacklist.length;
         for (int i = 0; i < blacklist.length; i++) {
             if (blacklist[i]<valid) {
                 while (hm.containsKey(n-1)==true) {
@@ -29,7 +30,7 @@ public class RandomPickWithBlacklist {
             return val;
         }
     }
-    public void main(String[] args) {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();

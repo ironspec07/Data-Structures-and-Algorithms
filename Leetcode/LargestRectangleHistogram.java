@@ -1,8 +1,8 @@
 import java.util.*;
 public class LargestRectangleHistogram {
     public static int largestAreaHistogram(int[] heights){
-        int[] NSERight = nextGreaterElementRight(heights);
-        int[] NSELeft = nextGreaterElementLeft(heights);
+        int[] NSERight = nextSmallerElementRight(heights);
+        int[] NSELeft = nextSmallerElementLeft(heights);
         int ans = Integer.MIN_VALUE;
         for (int i = 0; i < heights.length; i++) {
             int height = heights[i];
@@ -14,29 +14,29 @@ public class LargestRectangleHistogram {
         }
         return ans;
     }
-    public static int[] nextGreaterElementRight(int[] nums){
+    public static int[] nextSmallerElementRight(int[] nums){
         int[] ans = new int[nums.length];
         Stack<Integer> st = new Stack<>();
         for (int i = 0; i < nums.length; i++) {
-            while (st.size()>0 && nums[i]>nums[st.peek()]) {
+            while (st.size()>0 && nums[i]<nums[st.peek()]) {
                 int idx = st.pop();
-                ans[idx] = nums[i];
+                ans[idx] = i;
             }
             st.push(i);
         }
         while (st.size()>0) {
             int idx = st.pop();
-            ans[idx] = -1;
+            ans[idx] = nums.length;
         }
         return ans;
     }
-    public static int[] nextGreaterElementLeft(int[] nums){
+    public static int[] nextSmallerElementLeft(int[] nums){
         int[] ans = new int[nums.length];
         Stack<Integer> st = new Stack<>();
         for (int i = nums.length-1; i >= 0; i--) {
-            while (st.size()>0 && nums[i]>nums[st.peek()]) {
+            while (st.size()>0 && nums[i]<nums[st.peek()]) {
                 int idx = st.pop();
-                ans[idx] = nums[i];
+                ans[idx] = i;
             }
             st.push(i);
         }
@@ -50,6 +50,9 @@ public class LargestRectangleHistogram {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] heights = new int[n];
+        for (int i = 0; i < heights.length; i++) {
+            heights[i] = sc.nextInt();
+        }
         int ans = largestAreaHistogram(heights);
         System.out.println(ans);
         sc.close();

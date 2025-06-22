@@ -19,6 +19,7 @@ public class MinStack {
     
     public static void pop() {
         long rem = st.pop();
+        @SuppressWarnings("unused")
         long val;
         if (rem < 0) {
             val = min;

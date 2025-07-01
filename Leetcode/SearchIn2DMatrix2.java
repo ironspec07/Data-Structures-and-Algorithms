@@ -1,23 +1,18 @@
 import java.util.*;
-public class SearchIn2DMatrix {
-    public static boolean findMatrix(int[][] matrix, int target){
-        int n = matrix.length;
-        int m = matrix[0].length;
-        int lo = 0;
-        int hi = n*m-1;
-        while (lo<=hi) {
-            int mid = lo + (hi-lo)/2;
-            int r = mid/m; 
-            int c = mid%m;
-            // System.out.println(matrix[r][c]);
-            if (matrix[r][c] == target) {
+public class SearchIn2DMatrix2 {
+    public static boolean findMatrix2(int[][] matrix, int target){
+        int i = 0;
+        int j = matrix[0].length-1;
+        while (i < matrix.length && j>=0 ) {
+            int mid = matrix[i][j];
+            if (mid == target) {
                 return true;
             } 
-            else if (matrix[r][c] < target) {
-                lo = mid+1;
+            else if (mid > target) {
+                j--;
             }
             else{
-                hi = mid-1;
+                i++;
             }
         }
         return false;
@@ -33,7 +28,7 @@ public class SearchIn2DMatrix {
             }
         }
         int target = sc.nextInt();
-        boolean ans = findMatrix(arr,target);
+        boolean ans = findMatrix2(arr,target);
         System.out.println(ans);
         sc.close();
     }

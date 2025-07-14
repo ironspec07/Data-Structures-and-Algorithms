@@ -55,7 +55,7 @@ public class LeftView {
     }
     
     public static List<Integer> leftView(TreeNode root) {
-
-        return new ArrayList<>();
+        ArrayList<Integer> al = new ArrayList<>();
+        return al;
     }
 }

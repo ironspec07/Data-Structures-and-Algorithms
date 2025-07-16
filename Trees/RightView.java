@@ -8,7 +8,7 @@ class TreeNode {
     TreeNode(int x) { val = x; }
 }
 
-public class LeftView {
+public class RightView {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -63,7 +63,7 @@ public class LeftView {
             int n = q.size();
             for (int i = 1; i <= n; i++) {
                 TreeNode temp = q.remove();
-                if (i == 1) {
+                if (i == n) {
                     ans.add(temp.val);
                 }
                 if (temp.left != null) {

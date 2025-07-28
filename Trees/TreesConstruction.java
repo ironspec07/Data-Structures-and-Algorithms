@@ -1,3 +1,4 @@
+// Leetcode-105
 import java.util.*;
 public class TreesConstruction {
     static class  TreeNode {
@@ -39,8 +40,11 @@ public class TreesConstruction {
         for (int i = 0; i < inOrder.length; i++) {
             inOrder[i] = sc.nextInt();
         }
+        @SuppressWarnings("unused")
         TreeNode ans = buildTree(preOrder,inOrder);
-        System.out.println(ans);
+        for (int i : preOrder) {
+            System.out.print(i+" ");
+        }
         sc.close();
     }
 }

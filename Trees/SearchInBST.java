@@ -1,11 +1,9 @@
-package Graphs;
+//Leetcode-700
 import java.util.*;
-public class Dijkstra {
+public class SearchInBST {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int m = sc.nextInt();
-        int src = sc.nextInt();
-        
+        int[]
     }
 }

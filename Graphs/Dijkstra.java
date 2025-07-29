@@ -7,5 +7,6 @@ public class Dijkstra {
         int m = sc.nextInt();
         int src = sc.nextInt();
         
+        
     }
 }

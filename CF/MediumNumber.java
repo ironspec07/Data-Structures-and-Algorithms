@@ -1,3 +1,4 @@
+//1760A
 import java.util.*;
 public class MediumNumber {
     public static void main(String[] args) {

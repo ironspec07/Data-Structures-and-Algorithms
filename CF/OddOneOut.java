@@ -1,4 +1,4 @@
-//1915A
+//1915A-800
 import java.util.*;
 public class OddOneOut {
     public static void main(String[] args) {

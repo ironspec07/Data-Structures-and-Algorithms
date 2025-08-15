@@ -1,4 +1,3 @@
-package Graphs;
 import java.util.*;
 public class BFS {
     private static List<List<Integer>> construction(int n, int m, int[][] edges){

@@ -1,4 +1,4 @@
-// Problem-1328A-800
+// Problem-1328A-800 rated
 import java.util.*;
 public class DivisiblityProblem {
     public static void main(String[] args) {
